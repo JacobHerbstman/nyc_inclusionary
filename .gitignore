@@ -1,0 +1,29 @@
+# OS
+.DS_Store
+
+# R session/user files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+proposal/*.pdf
+
+# Task runtime artifacts
+tasks/*/input/
+tasks/*/output/
+tasks/*/temp/
+
+# Common compressed/intermediate outputs
+*.zip
+*.gz
+*.tmp
