@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{hyperref}
+
+\onehalfspacing
+
+\title{The Returns to Inclusionary Zoning:\\Evidence from NYC Housing Lotteries}
+\author{Research Proposal}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Inclusionary zoning has become one of the most popular affordable housing policies in American cities. Hundreds of municipalities now require or incentivize developers to set aside a fraction of new units for below-market-rate tenants. Yet despite widespread adoption, we have no causal evidence on whether these programs improve outcomes for recipients. This proposal outlines a research design to fill that gap using New York City's Housing Connect lottery system.
+
+The policy stakes are high. Inclusionary zoning is expensive. \citet{soltas2024price} estimates a marginal fiscal cost of \$1.6 million per affordable unit in New York City, driven by regulatory costs and reduced housing supply. His subsequent work on the Low-Income Housing Tax Credit \citep{soltas2024tax} finds that developers capture around half of the subsidy in profits---approximately 45 percent---with an effective fiscal cost of about one million dollars per net new housing unit. The implicit costs may be even larger: mandating below-market units functions as a tax on development, constraining overall housing production and raising market rents for everyone not lucky enough to win a subsidized unit. If these programs do not meaningfully improve recipient outcomes, the case for this policy approach weakens considerably relative to alternatives such as direct cash transfers, portable vouchers, or simply allowing more market-rate construction.
+
+\section{The NYC Housing Connect System}
+
+New York City operates one of the largest affordable housing allocation systems in the United States. In May 2014, the de Blasio administration unveiled Housing New York, a ten-year plan to create or preserve 200,000 affordable homes \citep{nychpd2014housing}. This target was later expanded to 300,000 units by 2026 through Housing New York 2.0 \citep{nychpd2017housing2}. The city's Department of Housing Preservation and Development (HPD) and Housing Development Corporation (HDC) administer this program, marketing thousands of affordable apartments annually through a centralized online portal called Housing Connect.
+
+Housing Connect launched in 2013 and has grown substantially since. In 2014, approximately 2,900 affordable apartments were posted through the system. By 2018, this had grown to 7,700 apartments, and by 2019, nearly 5.9 million applications were filed for approximately 5,650 available units. The 2024 figures are even more striking: the system processed approximately 6 million applications for roughly 10,000 units. Between 2014 and 2019, Housing Connect received over 20 million applications across 426 separate lotteries from more than 700,000 registered users.
+
+The mechanical operation of the lottery is central to this research design. When applications close for a given building, the Housing Connect system randomly assigns each complete application a log number. Applications are then processed in log number order. Marketing agents review applicants sequentially, verifying income, household size, and other eligibility criteria. If an applicant is found eligible and a unit remains available, they are offered a lease. If they are ineligible or decline, the next applicant in log number order is processed. This procedure continues until all units are filled.
+
+Importantly, each building conducts its own independent lottery. There is no universal waitlist---every new listing is a fresh, unrelated lottery with its own random log number assignment. Applicants may enter any number of lotteries at no cost. The NYC Housing Connect guidebook explicitly states that ``your chances are the same, whether you apply by paper or online'' and that submitting both paper and online applications will result in disqualification. The randomization occurs within a few weeks after the application deadline, after which applicants with complete profiles receive their log numbers.
+
+The income eligibility bands span a wide range. Units are allocated to households earning between 30 percent and 165 percent of Area Median Income (AMI). For a family of four in New York City, this translates roughly to annual household income between \$30,000 and \$240,000. The distribution of units across income bands skews lower: approximately 47 percent of units serve low-income households (50--80 percent AMI), 21 percent serve extremely low-income households (below 30 percent AMI), 13 percent serve very low-income households (30--50 percent AMI), and only 19 percent serve moderate or middle-income households (above 80 percent AMI). This variation in the income distribution of recipients is essential for studying heterogeneous treatment effects.
+
+\section{Prior Literature: Gautreaux, MTO, and Housing Voucher Lotteries}
+
+The existing evidence on housing mobility programs and subsidies comes from three major research streams: the Gautreaux program, the Moving to Opportunity (MTO) experiment, and housing voucher lotteries. Each provides important context but also highlights the gap this project would fill.
+
+The Gautreaux Assisted Housing Program emerged from a 1976 Supreme Court decision (\textit{Hills v. Gautreaux}) requiring the Chicago Housing Authority to remedy decades of deliberate racial segregation in public housing. Between 1976 and 1998, approximately 25,000 African American families were offered Section 8 vouchers with restrictions requiring moves to predominantly white or racially mixed neighborhoods. Early research by \citet{rosenbaum1995changing} found that suburban movers showed higher employment rates than city movers, and their children were more likely to complete high school, take college-track courses, and attend college. However, as HUD noted in its evaluation, Gautreaux was not a true randomized experiment. Families who moved to suburbs may have differed systematically from those who remained in the city in motivation, capacity, or unobserved characteristics. The comparison group was self-selected, not randomly assigned, limiting causal inference.
+
+The Moving to Opportunity experiment was designed explicitly to address Gautreaux's methodological limitations. Conducted between 1994 and 1998 in five cities (Baltimore, Boston, Chicago, Los Angeles, and New York), MTO randomly assigned approximately 4,600 families living in high-poverty public housing projects to one of three groups: an experimental voucher group required to move to census tracts with poverty rates below 10 percent, a Section 8 voucher group with no geographic restrictions, and a control group that retained access to public housing but received no voucher.
+
+The MTO results were initially disappointing from an economic self-sufficiency perspective. \citet{ludwig2013long} and earlier interim evaluations found that moving to lower-poverty neighborhoods greatly improved the mental and physical health of adults but had no detectable impacts on adult earnings or employment. However, \citet{chetty2016effects} re-analyzed the MTO data with a longer follow-up period using tax records and found substantial effects for children who moved at young ages. Children whose families moved to low-poverty neighborhoods before age 13 experienced earnings gains of approximately 31 percent by their mid-twenties relative to the control group mean. They were more likely to attend college and less likely to become single parents. In contrast, moving as an adolescent had slightly negative effects, possibly due to disruption costs. Critically, MTO found no evidence of exposure effects among adults---the gains were concentrated entirely among young children, suggesting that the duration of childhood exposure to better environments drives long-term economic outcomes.
+
+\citet{jacob2012effects} provide the cleanest causal evidence on housing voucher effects using a randomized lottery. In July 1997, the Chicago Housing Authority opened its Section 8 voucher waitlist for the first time in 12 years and received 82,607 applications. Applicants were randomly assigned to a waiting list, with those in the top 35,000 positions told they would receive vouchers within three years and the remainder informed they would not. Jacob and Ludwig linked lottery outcomes to Illinois unemployment insurance wage records, TANF and Medicaid administrative data, and arrest records. Their findings are striking: among working-age, able-bodied adults, housing voucher use reduced labor force participation by approximately 4 percentage points (6 percent) and quarterly earnings by \$329 (10 percent), while increasing TANF participation by 2 percentage points (15 percent). They found no evidence that housing-specific mechanisms hypothesized to promote work---such as neighborhood quality or residential stability---were empirically important.
+
+\section{Contribution to the Literature}
+
+This project would provide the first causal evidence on the recipient-side effects of inclusionary zoning. The existing literature focuses almost entirely on either supply-side questions (how much housing gets built, at what cost) or on portable voucher programs that differ fundamentally from place-based inclusionary housing. Inclusionary zoning ties subsidies to specific buildings in specific locations, operates through private developers rather than housing authorities, and serves a much broader income population than traditional voucher programs.
+
+The contribution is threefold. First, I provide causal estimates of inclusionary housing effects on a comprehensive set of outcomes---earnings, employment, safety net participation, housing stability, shelter use, and eviction filings---using administrative data linked to lottery records. Second, I document heterogeneous effects across the income distribution, testing whether benefits are concentrated among lower-income recipients or extend to moderate and middle-income households. The breadth of the Housing Connect income bands (30--165 percent AMI) is essential for this analysis; voucher studies like \citet{jacob2012effects} are limited to very low-income populations and cannot speak to the value of subsidies for households earning \$150,000 or more. Third, I characterize the actual treatment intensity by measuring the neighborhood quality change induced by winning the lottery, which is essential for interpreting any downstream effects.
+
+\section{Econometric Framework}
+
+The identification strategy exploits the random assignment of log numbers within each Housing Connect lottery. Conditional on applying to a given lottery, an applicant's log number is orthogonal to all observed and unobserved characteristics. This provides a clean instrument for receiving a housing unit.
+
+Let $i$ index individuals and $j$ index lotteries. Define $W_{ij}$ as an indicator for whether individual $i$ wins lottery $j$ (receives a sufficiently low log number to be offered a unit). Define $D_{ij}$ as an indicator for whether individual $i$ actually leases a unit through lottery $j$. The outcome $Y_{it}$ is measured for individual $i$ at time $t$. The basic intention-to-treat (ITT) specification regresses outcomes on the winning indicator, controlling for lottery fixed effects:
+
+\begin{equation}
+Y_{it} = \alpha + \beta_{\text{ITT}} \cdot W_{ij} + \gamma_j + X_i'\delta + \varepsilon_{it}
+\end{equation}
+
+The coefficient $\beta_{\text{ITT}}$ captures the causal effect of winning the lottery on outcomes. The lottery fixed effects $\gamma_j$ absorb all building-specific and time-specific variation, ensuring that comparisons are made only among applicants to the same lottery. The vector $X_i$ includes baseline covariates (household income at application, household size, current address characteristics) to improve precision, though they are not required for identification given random assignment.
+
+Not all lottery winners actually lease units. Some may be found ineligible during document verification, some may decline the offered unit, and some may find alternative housing before the offer arrives. Following \citet{angrist1996identification}, I estimate the local average treatment effect (LATE) on compliers using the lottery outcome as an instrument for actual lease-up:
+
+\begin{align}
+\text{First stage:} \quad D_{ij} &= \pi_0 + \pi_1 \cdot W_{ij} + \gamma_j + X_i'\lambda + u_{ij} \\
+\text{Second stage:} \quad Y_{it} &= \alpha + \beta_{\text{LATE}} \cdot \hat{D}_{ij} + \gamma_j + X_i'\delta + \varepsilon_{it}
+\end{align}
+
+The LATE identifies the effect of actually receiving a subsidized unit among compliers---those who would lease up if they won but would not otherwise obtain the unit. The key identifying assumptions are instrument relevance (winning the lottery increases the probability of leasing up, which is mechanical), instrument exogeneity (log numbers are randomly assigned conditional on applying), and the exclusion restriction (winning the lottery affects outcomes only through the housing unit, not through other channels).
+
+A central empirical challenge is that applicants enter multiple lotteries. \citet{arnosti2020design} document that NYC lottery outcomes ``differ little from random assignment of tenants to units'' precisely because applicants submit applications to many buildings simultaneously. As one HPD official noted, users ``check the option for `apply to everything.'\,'' This creates two complications: defining who is treated (someone who wins their first lottery? their fifth?) and ensuring that the comparison group is appropriate (losers may win subsequent lotteries).
+
+I address this through several complementary approaches. The primary specification focuses on first lottery outcomes: comparing individuals who won their first-ever Housing Connect lottery to those who lost their first lottery, conditional on the lottery they applied to. This defines a clean treatment/control distinction at the moment of first randomization. To handle differential attrition from the comparison group (losers who later win), I employ two strategies. First, I censor the comparison group at the point of any subsequent win, treating later outcomes as missing. Second, I define treatment as ``ever winning within $K$ years of first application'' and compare ever-winners to never-winners over that horizon. This trades off a cleaner counterfactual (never-winners) against potential selection (who remains in the applicant pool without winning for $K$ years?).
+
+To study heterogeneous treatment effects by income band, I interact the treatment indicator with baseline income category indicators. The estimating equation becomes:
+
+\begin{equation}
+Y_{it} = \alpha + \sum_k \beta_k \cdot (W_{ij} \times \mathbf{1}_k) + \gamma_j + X_i'\delta + \varepsilon_{it}
+\end{equation}
+
+where $\mathbf{1}_k$ indicates membership in income band $k$ (e.g., extremely low, very low, low, moderate, middle). The coefficients $\beta_k$ trace out how treatment effects vary across the income distribution. A finding that $\beta_k$ is large and positive for low-income recipients but small or null for moderate-income recipients would support the hypothesis that subsidies deliver greater benefits to those with fewer outside options.
+
+\section{Data Requirements and the Case for Administrative Records}
+
+The project requires linking Housing Connect lottery records to administrative outcome data. The use of administrative records rather than survey data is not merely a practical choice---it is methodologically essential given mounting evidence on the systematic inaccuracy of survey-based measures of income and program participation.
+
+\citet{meyer2015household} document a ``crisis'' in household survey data quality, showing that more than half of welfare dollars and nearly half of food stamp dollars are missed in several major surveys. The underreporting problem is pervasive and worsening: between 1996 and 2008, the mean absolute error in reported benefit amounts increased by 70 percent for Old-Age, Survivors, and Disability Insurance and 60 percent for Supplemental Security Income. This measurement error is not random noise but systematic underreporting that biases estimates of program effects and the economic circumstances of low-income populations.
+
+\citet{meyer2019linked} demonstrate the consequences of this underreporting for policy analysis. Linking administrative records from food stamps, TANF, General Assistance, and subsidized housing to the Current Population Survey, they find that program receipt in the CPS is missed for over one-third of housing assistance recipients, 40 percent of food stamp recipients, and 60 percent of TANF and General Assistance recipients. Using survey data alone, the poverty-reducing effect of all programs together is nearly halved relative to estimates using administrative data. For housing assistance specifically, the survey-based estimate of poverty reduction is just one-third of the administratively-measured effect. Correcting survey error often reduces the estimated share of single mothers falling through the safety net by one-half or more.
+
+These findings have direct implications for this study. Prior housing lottery evaluations have relied heavily on survey-based outcomes, particularly for safety net participation. If survey respondents systematically underreport transfer receipt---especially housing assistance---then treatment effect estimates may be biased. More importantly, using administrative records allows me to study outcomes that are simply unmeasurable in surveys: shelter entry from homeless services data, eviction filings from court records, and comprehensive wage histories from unemployment insurance systems. The administrative data strategy is therefore not merely preferred but necessary to obtain credible estimates of the full range of housing lottery effects. Treatment data---including applicant identity, lottery log numbers, income at application, household composition, and housing outcomes---are held by the NYC Department of Housing Preservation and Development. I will seek a research partnership through HPD's Center for Research on HOME (Housing Opportunity, Mobility, Equity), which has an explicit mandate to ``partner with external entities to conduct relevant research'' and states particular interest in ``proposals related to housing disparities, residential mobility, neighborhood effects, and socioeconomic inequality.'' The Center already operates the New York City Housing and Neighborhood Study (NYCHANS), a randomized control trial evaluating the impact of affordable housing on near-poor households, demonstrating institutional familiarity with lottery-based research designs.
+
+Outcome data will come from several sources. Quarterly earnings and employment will be obtained from New York State Department of Labor unemployment insurance wage records, which cover approximately 97 percent of nonfarm employment and include employee name, SSN, quarterly wages, and employer industry. Safety net participation---SNAP, cash assistance (TANF), and Medicaid---will come from NYC Human Resources Administration records through the HHS-Connect integrated data system. Shelter entry will come from NYC Department of Homeless Services data through the Client Assistance and Rehousing Enterprise System (CARES). Eviction filings will come from NY State Office of Court Administration records, available through the Housing Data Coalition. These linkages require either a government sponsor (for UI wage data) or data sharing agreements with the relevant agencies.
+
+A minimum follow-up period of three to five years post-lottery is necessary to observe whether effects persist beyond the immediate transition to subsidized housing. Given that Housing Connect has been operating since 2013, applicants from the earliest lotteries now have over a decade of potential follow-up. This duration is important given the MTO findings that childhood exposure effects took many years to materialize in labor market outcomes.
+
+\section{Policy Implications}
+
+The findings from this study would directly inform ongoing debates about affordable housing policy design. If effects are concentrated among low-income recipients and negligible for moderate-income recipients, the policy implication is that targeting should shift toward lower income bands. The current allocation---where only about half of units serve low-income households while nearly one-fifth go to moderate and middle-income households---may not be cost-effective. Reallocating units toward lower-income bands could improve program efficiency without necessarily reducing political support, particularly if the political coalition for affordable housing is based on the program's existence rather than on middle-class receipt of benefits.
+
+If effects are null across all income bands and outcome measures, the implication is more fundamental: inclusionary zoning may not generate meaningful benefits for anyone, even as it imposes substantial costs on housing markets through reduced supply and higher market rents. In that case, alternative approaches---direct subsidies, portable vouchers, or simply allowing more market-rate construction and relying on filtering---may dominate the current policy. Combined with Soltas's supply-side evidence on the high fiscal costs per unit, a finding of null recipient benefits would constitute a strong case for reconsidering the entire policy mechanism.
+
+Either finding would represent a meaningful contribution to an evidence base that currently contains no causal estimates of inclusionary zoning's effects on recipients. Inclusionary zoning is popular but under-studied. This project would provide the first rigorous evidence on whether the policy achieves its stated goals of improving housing stability and economic opportunity for the households it serves.
+
+\bibliographystyle{aer}
+\bibliography{references}
+
+\end{document}
