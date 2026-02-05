@@ -7,25 +7,32 @@ Produce descriptive statistics and exploratory analysis of NYC Housing Connect l
 - `advertised_lotteries_by_lottery.csv` - HPD lottery data (July 2020+)
 - `advertised_lotteries_by_building.csv` - Building-level lottery data
 - `affordable_housing_production_by_building.csv` - All Housing NY production
-- `thecity_housing_lotteries.csv` - 426 lotteries (2014-2019)
-- `thecity_lottery_applications.csv` - 20M+ applications
 - `local_law_217_report_2024.xlsx` - Applications/leases by demographics
-- NYC shapefiles
+- `cdbg_eligibility_by_census_tract.csv` - Tract-level low/mod income share and eligibility
 
 ## Outputs
-- `data_summary.csv` - Overview of all datasets
-- `data_columns.txt` - Column names for reference
-- `production_by_borough.csv` - Building counts by borough
-- `production_by_community_district.csv` - Building counts by CD
-- `ll217_*.csv` - Parsed Local Law 217 sheets
-- `map_affordable_housing.png` - Map of production locations
+- `coverage_summary.csv` - Dataset sizes and year/date coverage
+- `unit_characteristics_overview.csv` - Core unit and lottery totals
+- `lotteries_by_status.csv` - Status mix of advertised lotteries
+- `lotteries_by_borough.csv` - Borough distribution of listed units
+- `units_by_income_band.csv` - Unit counts by AMI band
+- `units_by_bedroom.csv` - Unit counts by bedroom mix
+- `lottery_year_summary.csv` - Listed units/lotteries by start year
+- `income_pipeline_counts.csv` - LL217 income counts by stage and band
+- `income_applicant_vs_lease.csv` - Applicant vs signed-lease income shares
+- `race_applicant_vs_lease.csv` - Applicant vs signed-lease race shares
+- `tract_join_coverage.csv` - Match quality to tract socioeconomic table
+- `location_sociodemographics.csv` - Unit distribution by tract eligibility type
+- `borough_lomod_summary.csv` - Borough-level weighted tract low/mod share
+- `eda_summary_report.md` - Human-readable summary of key findings
+- `thecity_data_status.csv` - Whether GitHub The City files are usable
 
 ## Key Descriptive Questions
 1. **Income Distribution of Units**: What share of lottery units target each AMI band?
 2. **Geographic Concentration**: Where is affordable housing being built?
 3. **Competition Ratios**: How many applicants per unit at each income level?
 4. **Winner Demographics**: Who actually gets units? (via LL217)
-5. **Neighborhood Quality**: What are the tract characteristics of lottery buildings?
+5. **Neighborhood Socioeconomics**: What tract-level low/mod income patterns characterize lottery locations?
 
 ## Usage
 
@@ -42,4 +49,4 @@ make
 ```
 
 ## Dependencies
-- R packages: tidyverse, sf, readxl, scales, knitr, kableExtra, ggplot2, viridis
+- R packages: tidyverse, readxl, lubridate, scales

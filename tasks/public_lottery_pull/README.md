@@ -43,6 +43,10 @@ Download public NYC Housing Connect lottery data and shapefiles for exploratory 
 - City Council Districts
 - PUMAs (2020)
 
+### NYC Open Data Socioeconomic Context
+- Community Development Block Grant (CDBG) eligibility by census tract
+  - Includes tract-level low/mod income population share and eligibility status
+
 ## Usage
 
 ```bash
@@ -59,6 +63,7 @@ make
 - `affordable_housing_production_by_project.csv`
 - `local_law_217_report_2024.xlsx`
 - `local_law_217_report_2021.xlsx`
+- `cdbg_eligibility_by_census_tract.csv`
 - `thecity_housing_lotteries.csv`
 - `thecity_lottery_applications.csv`
 - `thecity_methodology.md`

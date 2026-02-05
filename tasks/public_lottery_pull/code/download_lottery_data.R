@@ -21,7 +21,7 @@ cat("Downloading NYC Housing Connect lottery data...\n")
 #    Contains: lottery status, preferences, income levels, unit sizes
 # ----------------------------------------------------------------------------
 
-cat("  1/5: Downloading lotteries by lottery...\n")
+cat("  1/6: Downloading lotteries by lottery...\n")
 
 lotteries_by_lottery_url <- "https://data.cityofnewyork.us/api/views/vy5i-a666/rows.csv?accessType=DOWNLOAD"
 download.file(
@@ -36,7 +36,7 @@ download.file(
 #    Contains: address, BBL, census tract, council district, income levels
 # ----------------------------------------------------------------------------
 
-cat("  2/5: Downloading lotteries by building...\n")
+cat("  2/6: Downloading lotteries by building...\n")
 
 lotteries_by_building_url <- "https://data.cityofnewyork.us/api/views/nibs-na6y/rows.csv?accessType=DOWNLOAD"
 download.file(
@@ -51,7 +51,7 @@ download.file(
 #    Contains: all Housing New York units with BBL, census tract, coordinates
 # ----------------------------------------------------------------------------
 
-cat("  3/5: Downloading affordable housing production by building...\n")
+cat("  3/6: Downloading affordable housing production by building...\n")
 
 production_by_building_url <- "https://data.cityofnewyork.us/api/views/hg8x-zxpr/rows.csv?accessType=DOWNLOAD"
 download.file(
@@ -66,7 +66,7 @@ download.file(
 #    Contains: project-level data including senior units
 # ----------------------------------------------------------------------------
 
-cat("  4/5: Downloading affordable housing production by project...\n")
+cat("  4/6: Downloading affordable housing production by project...\n")
 
 production_by_project_url <- "https://data.cityofnewyork.us/api/views/hq68-rnsi/rows.csv?accessType=DOWNLOAD"
 download.file(
@@ -80,7 +80,7 @@ download.file(
 #    Note: This is an Excel file from HPD website
 # ----------------------------------------------------------------------------
 
-cat("  5/5: Downloading Local Law 217 report...\n")
+cat("  5/6: Downloading Local Law 217 report...\n")
 
 # 2024 report
 ll217_2024_url <- "https://www.nyc.gov/assets/hpd/downloads/excel/ll217-report.xlsx"
@@ -104,6 +104,25 @@ tryCatch({
   )
 }, error = function(e) {
   cat("    Warning: Could not download 2021 LL217 report.\n")
+})
+
+# ----------------------------------------------------------------------------
+# 6. CDBG Eligibility by Census Tract
+#    Contains tract-level low/mod income share and eligibility status
+# ----------------------------------------------------------------------------
+
+cat("  6/6: Downloading CDBG eligibility by census tract...\n")
+
+cdbg_url <- "https://data.cityofnewyork.us/api/views/qmcw-ur37/rows.csv?accessType=DOWNLOAD"
+tryCatch({
+  download.file(
+    cdbg_url,
+    destfile = "../output/cdbg_eligibility_by_census_tract.csv",
+    mode = "wb"
+  )
+}, error = function(e) {
+  cat("    Warning: Could not download CDBG eligibility data.\n")
+  cat("    Error: ", e$message, "\n")
 })
 
 cat("Lottery data download complete!\n")
